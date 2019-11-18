@@ -2,6 +2,13 @@
 # What is the largest prime factor of the number 600851475143 ?
 
 def prime(num):
-    pass
+    f = []
+    while(num > 1):
+        for x in range(2, num + 1):
+            if num % x == 0:
+                f.append(x)
+                num = int(num/x)
+                break
+    print(max(f))
 
-prime(13195)
+prime(600851475143)
