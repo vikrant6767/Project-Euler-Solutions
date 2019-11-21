@@ -3,7 +3,7 @@
 
 import math
 def isprime(num):
-    for i in range(3, math.floor(math.sqrt(n)) + 1, 2):
+    for i in range(3, math.floor(math.sqrt(num)) + 1, 2):
         if num % i == 0:
             return False
     return True
