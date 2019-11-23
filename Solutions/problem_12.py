@@ -13,18 +13,25 @@
 
 import math
 
-def get_fact(n):
-    fact=[]
-    for x in range(2, math.floor(n/2)+1):
-        if n % x == 0:
-            fact.append(x)
-    return fact
+def count_fact(num):
+    count = 2
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            count += 2
+    return count
 
-i, j = 2, 1
-while(True):
-    if (len(get_fact(j)) >= 499):
-        break
-    j, i = i + j, i+1
-print(j)
+def triangle_number(num):
+    return (num * (num + 1) // 2)
 
+def divisors(num):
+    if num % 2 == 0:
+        return count_fact(num // 2) * count_fact(num + 1)
+    else:
+        return count_fact((num + 1) // 2) * count_fact(num)
 
+count = 500
+x = count
+while divisors(x) <= count:
+    x += 1
+
+print(triangle_number(x))
